@@ -13,8 +13,11 @@ Install and Configuration
 -------------------------
 ::
 
-	$ pip install aiohttp-sqlite-dominate-stack-reference
-	$ cd aiohttp_sqlite_dominate_stack_reference
+	$ python3 -m venv ve
+	$ . ve/bin/activate
+	$ pip install --upgrade pip
+	$ git clone https://github.com/jmcedu/aiohttp-sqlite-dominate-stack-reference.git
+	$ cd cd aiohttp-sqlite-dominate-stack-reference/
 	$ pip install -r requirements.txt
 
 Create the tiny starter reference database::
