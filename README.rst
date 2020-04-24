@@ -35,7 +35,10 @@ And run your app::
 (Other adev options may be desirable, and additions like 
 `aiohttp-debugtoolbar <https://github.com/aio-libs/aiohttp-debugtoolbar>`_
 might be useful.)
-	
+
+Finally, launch a browser and go to http://localhost:8080/select_test1 or one
+of the other handlers to interact with the app.
+
 License
 -------
 
