@@ -14,7 +14,7 @@ async def get_test1(db, id):
 	c = await db.execute(*_get_test1(id))
 	return await c.fetchone()
 
-_get_test1_limited = lambda limit: ('select * from test1 limit ?', (limit,))
+_get_test1_limited = lambda limit: ('select * from test1 order by id desc limit ?', (limit,))
 async def get_test1_limited(db, limit):
 	c = await db.execute(*_get_test1_limited(limit))
 	return await c.fetchall()
@@ -27,7 +27,7 @@ _update_test1 = lambda id, value: ('update test1 set name=? where id=?', (value,
 async def update_test1(db, id, value):
 	c = await db.execute(*_update_test1(id, value))
 
-_find_test1 = lambda like: ('select * from test1 where name like ?', ('%' + like + '%',))
+_find_test1 = lambda like: ('select * from test1 where name like ? order by id desc', ('%' + like + '%',))
 async def find_test1(db, like):
 	c = await db.execute(*_find_test1(like))
 	return await c.fetchall()
